@@ -1,9 +1,10 @@
-/**************************************************************************************************
-
-    Name : Ankit Dimri
-    code : Longest Maximum Value Contiguous Subsequence using dynamic porgramming.
-
-**************************************************************************************************/
+/****************************************************************************************
+ *                                                                                      *
+ *  @Ankit Dimri                                                                        *
+ *  A implimentation for the algorithm to find the MAXIMUM VALUE CONTIGUOUS SUBSEQUENCE *
+ *  in an array using Dynamic Programming in c++                                        *
+ *                                                                                      *
+ ****************************************************************************************/
 
 #include <iostream>
 #include <vector>
