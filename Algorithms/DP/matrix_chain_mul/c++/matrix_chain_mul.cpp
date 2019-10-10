@@ -1,11 +1,12 @@
-/**************************************************************************************************
+/*******************************************************************************************
+ *                                                                                         *
+ *  @Ankit Dimri                                                                           *
+ *  Matrix Chain Multiplication. Make parenthesization on a matrix Chain to give solution  *
+ *  of optimal number of multiplicatons by put parentheis.                                 *
+ *                                                                                         *
+ *******************************************************************************************/
 
-    Name : Ankit Dimri
-    code : Matrix Chain Multiplication. Make parenthesization on a matrix Chain to give solution
-           of optimal number of multiplicatons by put parentheis.
-
-**************************************************************************************************/
-
+/* Librarires */
 #include <iostream>
 #include <vector>
 #include <climits>  // for INT_MAX
