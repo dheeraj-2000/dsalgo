@@ -2,7 +2,7 @@
 #include<vector>
 #include<algorithm>
 using namespace std;
-int find();
+int search();
 int main(){
 	int t;
 	cin>>t;
@@ -12,7 +12,7 @@ int main(){
 	    cin>>n;
 	    vector<int>arr;
 	    for(int i=0;i<n;i++)
-	       arr.push_back(find());
+	       arr.push_back(search());
 	    cin>>k;
 	    sort(arr.begin(),arr.end());
 	    cout<<arr[k-1]<<endl;
@@ -20,7 +20,7 @@ int main(){
 	return 0;
 }
 
-int find(){
+int search(){
     int ret;
     cin>>ret;
     return ret;
