@@ -35,6 +35,8 @@ void inorder(Node*root)
             inorder(root->left);
             cout<<root->data<<endl;
             inorder(root->right);
+
+
       }
 }
 
