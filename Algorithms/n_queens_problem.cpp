@@ -87,7 +87,7 @@ bool solveNqueen(vector<vector <int> > &board, int i, int N) {
 int main() {
     int N;
     cout<<"\t Enter value of N (number of queens you want to put on N * N chess board): ";
-    cin >> N;
+    cin >> N;                                                               //Enter the numbre of queens
     vector<vector <int> >board(N, vector<int>(N, 0));
     solveNqueen(board, 0, N);
     cout << "totalcalls : " << totalcalls << endl;
