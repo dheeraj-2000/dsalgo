@@ -2,13 +2,11 @@
 #include <cstdio>
 #include <cstdlib>
 #include <algorithm>
-
 #include <string>
 #include <queue>
 #include <vector>
 #include <set>
 #include <map>
-
 
 using namespace std;
 
@@ -17,7 +15,7 @@ typedef long long int lint;
 int totalcalls = 0;
 int c = 0;
 
-bool isSafe(vector<vector <int> > &board, int i, int j, int N) {
+bool isSafe(vector<vector <int> > &board, int i, int j, int N) {                //function to check queen is safe
     for (int row = 0; row < i; ++row) {
         if (board[row][j] == 1) {
             return false;
