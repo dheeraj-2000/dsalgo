@@ -43,7 +43,7 @@ bool isSafe(vector<vector <int> > &board, int i, int j, int N) {                
     return true;
 }
 
-void printBoard(vector<vector <int> > &board, int N) {
+void printBoard(vector<vector <int> > &board, int N) {                         // print the position of the queen
     c++;
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < N; ++j) {
