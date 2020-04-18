@@ -14,7 +14,7 @@ int add_node(Node** head_ref, int new_data){                  //adding a node at
 }
 
 int get_sum(Node*  node){
-      int sum =0;                                       //printing data
+      int sum =0;                                            //printing data
   while (node!=NULL) {
         sum += node->data;
     //cout<<node->data<<endl;
