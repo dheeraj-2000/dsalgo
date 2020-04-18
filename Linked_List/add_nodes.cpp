@@ -6,7 +6,7 @@ public:
   Node* next;
 };
 
-int add_node(Node** head_ref, int new_data){                  //adding at begining
+int add_node(Node** head_ref, int new_data){                  //adding a node at begining
   Node* new_node = new Node();
   new_node->data = new_data;
   new_node->next = (*head_ref);
