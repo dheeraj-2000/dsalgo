@@ -27,7 +27,7 @@ int get_sum(Node*  node){
 
 
 int main(){
-      Node* head = NULL;
+      Node* head = NULL;                                    //intilizing head as Null value
       int n,l;
       cin>>n;
       while(n--){
