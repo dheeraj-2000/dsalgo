@@ -2,7 +2,7 @@
 using namespace std;
 
 
-int mat_rot(){
+int mat_rot(int row, int col, int mat){
 
 }
 
