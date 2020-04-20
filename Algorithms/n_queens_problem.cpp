@@ -2,13 +2,11 @@
 #include <cstdio>
 #include <cstdlib>
 #include <algorithm>
-
 #include <string>
 #include <queue>
 #include <vector>
 #include <set>
 #include <map>
-
 
 using namespace std;
 
@@ -17,7 +15,7 @@ typedef long long int lint;
 int totalcalls = 0;
 int c = 0;
 
-bool isSafe(vector<vector <int> > &board, int i, int j, int N) {
+bool isSafe(vector<vector <int> > &board, int i, int j, int N) {                //function to check queen is safe
     for (int row = 0; row < i; ++row) {
         if (board[row][j] == 1) {
             return false;
@@ -45,7 +43,7 @@ bool isSafe(vector<vector <int> > &board, int i, int j, int N) {
     return true;
 }
 
-void printBoard(vector<vector <int> > &board, int N) {
+void printBoard(vector<vector <int> > &board, int N) {                         // print the position of the queen
     c++;
     for (int i = 0; i < N; ++i) {
         for (int j = 0; j < N; ++j) {
@@ -87,7 +85,7 @@ bool solveNqueen(vector<vector <int> > &board, int i, int N) {
 int main() {
     int N;
     cout<<"\t Enter value of N (number of queens you want to put on N * N chess board): ";
-    cin >> N;
+    cin >> N;                                                               //Enter the numbre of queens
     vector<vector <int> >board(N, vector<int>(N, 0));
     solveNqueen(board, 0, N);
     cout << "totalcalls : " << totalcalls << endl;
