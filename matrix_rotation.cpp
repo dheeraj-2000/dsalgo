@@ -15,7 +15,7 @@ int transpos_matrix(int matrix[N][N]){
 int reverse_rows(int matrix[N][N]){
       for (int i=0; i<N; i++){
             for (int j=0; j<N-1; j++){
-                  swap(matrix[i][j], matrix[i][j]);
+                  swap(matrix[i][j], matrix[j][i]);
             }
       }
 
@@ -41,6 +41,6 @@ int main(){
 
       cout<< "Rotated matrix is: " << "\n" << print_matrix( matrix);
       reverse_rows( matrix);
-      
+
 
 }
