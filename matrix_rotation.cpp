@@ -23,9 +23,11 @@ int reverse_rows(int matrix[N][N]){
 
 int print_matrix(int matrix[N][N]){
       for (int i=0; i<N; i++){
-            for ()
+            for (int j=0; j<N; j++){
+                  cout<< '\t' << matrix[i][j];
+            }
       }
-
+      cout << "\n";
 }
 
 
