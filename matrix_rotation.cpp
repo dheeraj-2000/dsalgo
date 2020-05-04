@@ -34,5 +34,7 @@ int print_matrix(int matrix[N][N]){
 int main(){
       int matrix[N][N] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
       cout<< "The given matrix is: " << print_matrix[N][N];
-
-      cout<< "Transpose matrix of the given matrix is: " << transpos_matrix[N][N];
+      transpos_matrix[N][N];
+      cout<< "Transpose matrix of the given matrix is: " << print_matrix[N][N];
+      reverse_rows[N][N];
+      cout<< "Rotated matrix is: " << print_matrix[N][N];
