@@ -15,5 +15,4 @@ int print_mat(){
 
 // Driver function to test above function
 int main(){
-      
-}
+      int mat[4][4]
