@@ -13,15 +13,18 @@ int transpos_matrix(int matrix[N][N]){
 }
 
 int reverse_rows(int matrix[N][N]){
-      for(int i=0; i<N; i++){
-            for(int j=i; j<N-1; j++){
-                  swap(matrix[i][j], matrix[i][j])
+      for (int i=0; i<N; i++){
+            for (int j=i; j<N-1; j++){
+                  swap(matrix[i][j], matrix[i][j]);
             }
       }
 
 }
 
-int print_mat(){
+int print_matrix(int matrix[N][N]){
+      for (int i=0; i<N; i++){
+            for ()
+      }
 
 }
 
