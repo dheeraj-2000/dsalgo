@@ -37,8 +37,19 @@ int print_matrix(int matrix[N][N]){                    // Printing the matrix
 int main(){                                           // Driver function to test above function
 
       int matrix[N][N] = {1, 2, 3, 4, 5, 6, 7, 8, 9};
+      // int N;
+      // cout << "Size of matrix ?: " << endl;
+      // cin>> N;
+      // int matrix[N][N];
+      // cout<<"h";
+      // for (int i=0; i<N; i++){
+      //       for (int j=0; j<N; j++){
+      //             cin>>matrix[i][j];
+      //       }
+      //       cout<<endl;
+      // }
       cout<< "The given matrix is: " << endl;
-      print_matrix( matrix);
+      print_matrix(matrix);
       transpos_matrix( matrix);
       reverse_rows( matrix);
       cout<< "Rotated matrix is: " << "\n" << print_matrix( matrix);
