@@ -1,4 +1,4 @@
-// Clockwise rotation of matrix by 90 degree
+// Anti-Clockwise rotation of matrix by 90 degree
 // @dheeraj
 
 #include<bits/stdc++.h>
