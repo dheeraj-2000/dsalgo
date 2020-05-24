@@ -5,7 +5,7 @@ using namespace std;
 
 void longest_subarray(int *arr, int n, int diff){
 sort(arr, arr+n);
-      
+
 
 
 
@@ -15,7 +15,7 @@ sort(arr, arr+n);
 
 
 
-
+      
 
 
 // Driver code
