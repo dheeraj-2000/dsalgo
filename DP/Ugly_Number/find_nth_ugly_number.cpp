@@ -5,18 +5,10 @@
 using namespace std;
 
 int get_min(int x, int y, int z){           //to find minimum of three number (you cna also use built-in function for min)
-      if(x < y) {
-         if(x < z)
-            return x;
-         else
-            return z;
-      }else {
-         if(y < z)
-            return y;
-         else
-            return z;
-      }
-   }
+      int min;
+      min=x<y?(x<z?x:z):(y<z?y:z);
+      return min;
+}
 
 int get_nth_ugly_number(int n){           //function to find nth ugly number
       int iterattor_factor_2=0,  iterattor_factor_3=0, iterattor_factor_5=0;
