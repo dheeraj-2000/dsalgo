@@ -19,7 +19,7 @@ int get_min(int x, int y, int z){           //to find minimum of three number (y
    }
 
 int get_nth_ugly_number(int n){
-      int i2=i3=i5=0;
+      int i_2=0,  i_3=0, i_5=0;
       int ugly[n];
       ugly[0]=1;
       long long int track_next_ugly = 1;
@@ -31,15 +31,15 @@ int get_nth_ugly_number(int n){
             track_next_ugly = get_min(next_multiple_of2, next_multiple_of3, next_multiple_of5);
             ugly[i]= track_next_ugly;
             if(track_next_ugly==next_multiple_of2){
-                  i2++;
+                  i_2++;
                   next_multiple_of2 = ugly[i]*2;
             }
             if(track_next_ugly==next_multiple_of3){
-                  i3++;
+                  i_3++;
                   next_multiple_of3 = ugly[i]*3;
             }
             if(track_next_ugly==next_multiple_of5){
-                  i5++;
+                  i_5++;
                   next_multiple_of5 = ugly[i]*5;
             }
       }
