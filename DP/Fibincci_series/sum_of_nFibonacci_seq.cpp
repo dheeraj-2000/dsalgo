@@ -21,7 +21,7 @@ int getSumofn_fibonaacci(int n){
 int main() {
       /* code */
       long int n;
-      cout<<"Enter the Seuence Term: ";
+      cout<<"Enter the Seuence Number: ";
       cin>>n;
       cout<<n<<"th Fibonacci number is: "<<getSumofn_fibonaacci(n);
       return 0;
