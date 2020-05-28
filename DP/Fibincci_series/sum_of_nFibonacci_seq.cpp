@@ -11,10 +11,10 @@ int getSumofn_fibonaacci(int n){
       long int i;
       fibo[0]=0;                 // Declraing 0th term and 1th term to be 1.
       fibo[1]=1;
-      for (i=2; i<=n+2; i++){
+      for (i=2; i<=n+1; i++){
             fibo[i] = fibo[i-1] + fibo[i-2];                //Adding previous two terms and storing it
       }
-      return (fibo[n+2]-1);
+      return (fibo[n+1]-1);
 }
 
 // Driver Code
