@@ -14,7 +14,7 @@ int getSumofn_fibonaacci(int n){
       for (i=2; i<=n+1; i++){
             fibo[i] = fibo[i-1] + fibo[i-2];                //Adding previous two terms and storing it
       }
-      return (fibo[n+1]-1);
+      return (fibo[n+1]-1);                                 //returning (n+2)th term -1
 }
 
 // Driver Code
