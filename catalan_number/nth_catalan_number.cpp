@@ -1,5 +1,6 @@
 // Catalan numbers form a sequence of natural numbers that occur in various counting problems
 // examples are : 1 1 2 5 14 42 132 429 1430 4862
+// complexity using DP is O(n^2)
 // @dheeraj
 
 #include<bits/stdc++.h>
