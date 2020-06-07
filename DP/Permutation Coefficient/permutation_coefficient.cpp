@@ -2,6 +2,7 @@
 // from a set of n elements.
 // P(10, 2) = 90
 // P(10, 3) = 720
+//Time complexity is O(n) and Space complexity is O(1)
 //@dheeraj
 #include<bits/stdc++.h>
 using namespace std;
