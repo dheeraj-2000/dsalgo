@@ -11,7 +11,8 @@ if(choice==1):
     fahrenheit=(celsius*1.8+32)
     print("Celcius to forenheit is: ",fahrenheit)
 
-else:
+if(choice==2):
+        print("Enter the Forenheit  value: ")
     fahrenheit=input()
     celsius=((fahrenheit-32)/1.8)
     print("Forenheit to Celcius: ",celsius)
