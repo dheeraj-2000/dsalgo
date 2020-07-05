@@ -1,6 +1,6 @@
 #include<bits/stdc++.h>
 using namespace std;
-class Node {                   //defining a node
+class Node {                                                   //defining a node
 public:
   int data;
   Node* next;
