@@ -24,8 +24,6 @@ int get_sum(Node*  node){
   //return sum;
 }
 
-
-
 int main(){                                                 //Driver Function
       Node* head = NULL;                                    //intilizing head as Null value
       int n,l;
