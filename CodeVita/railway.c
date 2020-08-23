@@ -17,13 +17,13 @@ int findPlatform(int arr[], int dep[], int n)
    while (i < n && j < n)
    {
       // If next event in sorted order is arrival, increment count of platforms needed
-      if (arr[i] <= dep[j])
+      if (arr[i] < dep[j])
       {
           plat_needed++;
           i++;
 
           // Update result if needed
-          if (plat_needed >= result)
+          if (plat_needed > result)
               result = plat_needed;
       }
 
