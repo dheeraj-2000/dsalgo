@@ -2,8 +2,8 @@
 using namespace std;
 
 int main(int argc, char const *argv[]) {
-      int arr[6] = {2, 5, 6, 1, 9, 3};
-      int t = 10;
+      int arr[3] = {3,2,4};
+      int t = 6;
       int temp, i, j;
 
       for (i=0; i<6; i++){
