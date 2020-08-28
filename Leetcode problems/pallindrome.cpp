@@ -18,7 +18,7 @@ public:
 };
 
 int main(){
-      int num = 0;
+      int num = 746384741;
       Solution object;
       cout<<object.check_pallindrome(num);
 }
