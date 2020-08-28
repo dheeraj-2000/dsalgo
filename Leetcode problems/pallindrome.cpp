@@ -3,8 +3,8 @@ using namespace std;
 class Solution{
 public:
       bool check_pallindrome(int num){
-            int reverse_num = 0;
-            int temp = num, flag = 0;
+            long long int reverse_num = 0;
+            long long int temp = num, flag = 0;
             if (num <0 )
                   return false;
             else{
@@ -18,7 +18,7 @@ public:
 };
 
 int main(){
-      int num = 746384741;
+      long long int num = 7463847410;
       Solution object;
       cout<<object.check_pallindrome(num);
 }
