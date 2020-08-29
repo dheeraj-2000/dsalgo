@@ -16,7 +16,7 @@ public:
 public:
       int roman_to_integer(string s){
             int result = 0;
-            for (int i=1; i<s.size(); i++){
+            for (int i=0; i<s.size(); i++){
                   int num1 = return_val(s[i]);
                   if(i+1 < s.size()){
                         int num2 = return_val(s[i+1]);
