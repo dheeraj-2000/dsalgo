@@ -21,9 +21,11 @@ public:
                   if(i+1 < s.size()){
                         int num2 = return_val(s[i+1]);
                         if(num1 >= num2)
-                              result = num1 + num2;
-                        else
+                              result = result + num1;
+                        else{
                               result = result + num2 - num1;
+                              i++;
+                        }
                   }
                   else
                         result = result + num1;
