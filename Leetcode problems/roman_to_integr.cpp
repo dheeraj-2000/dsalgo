@@ -2,7 +2,7 @@
 using namespace std;
 
 class Solution{
-public:
+private:
       int return_val(char roman){
             if (roman == 'I') return 1;
             if (roman == 'V') return 5;
