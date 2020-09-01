@@ -19,25 +19,42 @@ public:
                         case ')':
                               c = st.top();
                               st.pop();
-                              if (c == '}' || c == ']')
+                              if (c == '{' || c == '[')
                                     return false;
                               break;
 
                         case '}':
                               c = st.top();
                               st.pop();
-                              if (c == ')' || c == ']')
+                              if (c == '(' || c == '[')
                                     return false;
                               break;
 
                         case ']':
                               c = st.top();
                               st.pop();
-                              if (c == '}' || c == ')')
+                              if (c == '{' || c == '(')
                                     return false;
                               break;
 
                   }
+
+                //   if(s[i] == ')'){
+                //     if(st.empty() || st.top() != '(') return false;
+                //     else st.pop();
+                // }
+                //
+                // else if(s[i] == '}'){
+                //     if(st.empty() || st.top() != '{') return false;
+                //     else st.pop();
+                // }
+                //
+                //  else if(s[i] == ']'){
+                //     if(st.empty() || st.top() != '[') return false;
+                //     else st.pop();
+                // }
+                //
+                //  else st.push(s[i]);
 
 
             }
@@ -46,7 +63,7 @@ public:
 };
 
 int main(){
-      string str = "{[]}";
+      string str = "]";
       Solution obj;
       cout<<obj.isValid(str);
 }
