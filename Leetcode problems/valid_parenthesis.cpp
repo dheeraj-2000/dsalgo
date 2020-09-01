@@ -6,8 +6,8 @@ public:
       bool isValid(string s) {
             stack<char> st;
             char c;
-            for(int i=0; i<s.size(); i++){
-                  if(s[i] == '(' || '{' || '['){
+            for(int i=0; i<s.length(); i++){
+                  if(s[i] == '(' ||  s[i] == '{' || s[i] == '['){
                         st.push(s[i]);
                         continue;
                   }
@@ -19,21 +19,21 @@ public:
                         case ')':
                               c = st.top();
                               st.pop();
-                              if (c == '}' || ']')
+                              if (c == '}' || c == ']')
                                     return false;
                               break;
 
                         case '}':
                               c = st.top();
                               st.pop();
-                              if (c == ')' || ']')
+                              if (c == ')' || c == ']')
                                     return false;
                               break;
 
                         case ']':
                               c = st.top();
                               st.pop();
-                              if (c == '}' || ')')
+                              if (c == '}' || c == ')')
                                     return false;
                               break;
 
