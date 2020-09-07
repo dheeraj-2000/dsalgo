@@ -13,12 +13,19 @@ int main(){
                   for (j=0; j<n; j++)
                         cin>> arr[i][j];
             }
-            for (int i=0; i<n; i++){
-                  for (int j=0; j<n; j++)
-                        cout<< arr[i][j];
+            for (int i=1; i<n; i++){
+                        cout<< arr[0][i]<< '\t';
                   // cout<<endl;
             }
 
+            // int correct_placed = 0, mis_placed = 0;
+            //
+            // for(i=; i<n; i++){
+            //       if(arr[1][i] == 2 || arr[1][i] == 3 || arr[1][i] == 4 )
+            //             correct_placed = correct_placed +1;
+            //       else
+            //             mis_placed = mis_placed +1;
+            // }
             t=t-1;
       }
 }
