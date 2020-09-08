@@ -1,53 +1,42 @@
 #include<bits/stdc++.h>
+#define mod 1000000007
+
 using namespace std;
-#define dec_var ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
 
-int t,n,sum,mx,mn;
-int main()
-{
-    dec_var
-    cin>>t;
-    while(t--)
-    {
-        cin>>n;
-        int a[n];
-        for(int i=0;i<n;i++)
-        cin>>a[i];
-        mx=-1;
-        mn=7;
-        for(int i=0;i<n;i++)
-        {
-            bool m[n]={0};
-            m[i]=1;
+long long findPos(long long sum) {
+ long double ans = sqrtl(1ul+4*(sum));
+ ans = ans-1.0;
+ ans = ans/2.0;
+ long long finalAns = ans;
+ return finalAns;
+}
 
-            for(int j=i;j<n;j++)
-            {
-                if(a[i]>a[j])
-                m[j]=(m[i] | m[j]);
-            }
+void subMain() {
+ long long n;
+ cin >> n;        
+ long long sum = (n)*(n+1)/2;
+ if(sum%2!=0) {
+  cout << 0;
+  return;
+ }
+ long long x = findPos(sum);
+ long long subsum = x*(x+1)/2;
+ if(sum/2 == subsum) {
+  long long result = (x*(x-1ul))/2l+((n-x)*(n-x-1ul))/2l+(n-x);
+  cout << result;
+ }
+ else
+  cout << n-x;
+}
 
-            for(int j=i;j>=0;j--)
-            {
-                for(int k=i;k<n;k++)
-                {
-                    if(a[j]>a[k])
-                    {
-                        m[j] |=m[k];
-                        m[k] |=m[j];
-                    }
-                }
-            }
-            sum =0;
-            for(int j=0;j<n;j++)
-            {
-                sum+m[j];
-            }
-            if(sum>mx)
-            mx=sum;
-            if(sum<mn)
-            mn=sum;
-        }
-        cout<<mn<<" "<<mx<<endl;
-    }
-    return 0;
+int main() {
+ ios_base::sync_with_stdio(false);
+    cin.tie(NULL);
+ int t = 1;
+ cin >> t;
+ while(t--) {
+  subMain();
+  cout << "\n";
+ }
+ return 0;
 }

@@ -8,11 +8,11 @@ void solve(){
     cin>>r;
     double v[r];
     for(auto& z:v) cin>>z;
-
     int min_affected = 1000;
     int max_affected = -1;
     double a[r][r];
     memset(a , int_max , sizeof(a));
+    
     for(int i=0; i<r; i++){
         for(int j=i+1; j<r; j++){
                 double dec_temp;
@@ -27,7 +27,6 @@ void solve(){
         }
     }
 
-
     for(int x=0; x<r; x++){
             double time_inf[r];
             for(int i=0; i<r; i++){
@@ -35,21 +34,13 @@ void solve(){
             }
             time_inf[x] = 0;
             for(int q=0; q<10; q++){
-
                 for(int i=0; i<r; i++){
                     if(time_inf[i] != -1){
                         for(int j=0; j<r ; j++){
                             if(time_inf[j] == -1){
                                 if(a[i][j] < int_max && a[i][j] >= time_inf[i]){
                                     time_inf[j] = a[i][j];
-
-                                }
-                            }
-                        }
-                    }
-                }
-
-            }
+                              }}}}}}
 
             int tinf = 0;
             for(int i=0; i<r; i++){
