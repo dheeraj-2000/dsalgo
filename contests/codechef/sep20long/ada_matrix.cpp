@@ -22,4 +22,5 @@ int main(){                                                      // main functio
                   }
             }
             cout<<count<<endl;
+      }
 }
