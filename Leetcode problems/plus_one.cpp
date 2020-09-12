@@ -42,33 +42,3 @@ int main(){
             cout<<v[i];
       // cout<<s.plus_one(v)<<endl;
 }
-
-
-
-// class Solution {
-// public:
-//       vector plusOne(vector& digits) {
-//       int n = digits.size();
-//       int i = n-1;
-//       if(digits[i] != 9){
-//             digits[i]++;
-//       }
-//       else{
-//             while(digits[i] == 9 && i > 0){
-//                   digits[i] = 0;
-//                   i--;
-//             }
-//             if(i == 0 && digits[i] == 9){
-//                   digits[i] = 0;
-//                   auto it = digits.insert(digits.begin(),1,1);
-//             }
-//             else if(i == 0 && digits[i] != 9){
-//                   digits[i]++;
-//             }
-//             else{
-//                   digits[i]++;
-//             }
-//       }
-//       return digits;
-//       }
-// };
