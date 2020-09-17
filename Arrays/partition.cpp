@@ -32,7 +32,7 @@ int solve(vector<int> &B) {
                   for(int j = i+2; j<B.size(); j++) {
                         if(temp[j]==1)
                               result++;
-                  }
+                  }     
             }
       }
 
