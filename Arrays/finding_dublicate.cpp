@@ -55,5 +55,4 @@ int main(){
             v.push_back(input);
       }
       cout<<solve(v);
-
 }
