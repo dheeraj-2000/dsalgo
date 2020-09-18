@@ -1,6 +1,20 @@
 #include<bits/stdc++.h>
 #include<vector>
 using namespace std;
+// // Using Brute force Time: (n^2)  Space: (1)
+int solve(vector<int> &A) {
+
+      for (int i=0; i<A.size(); i++){
+            for(int j=i+1;j<A.size();j++){
+                  if(A[j]==A[i])
+                  return A[j];
+                  break;
+            }
+
+      }
+
+      return -1;
+}
 
 // // Using O(n) complexity and O(n) space;
 int solve(vector<int> &A) {
