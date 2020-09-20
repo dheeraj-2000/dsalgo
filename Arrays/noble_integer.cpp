@@ -13,7 +13,6 @@ int solve(vector<int> &B) {
 
 }
 
-
 int main(){
       int n, input;
       cin>>n;
