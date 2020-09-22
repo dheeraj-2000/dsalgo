@@ -8,6 +8,7 @@ int solve(vector<int> &B) {
       for(int i=0; i<B.size()-1; i++){
             if(B[i]==(B.size()-1-i) && B[i]!=B[i+1])
                   return 1;
+            if(B[B.size()-1] == 0) return 1;
       }
       return -1;
 
