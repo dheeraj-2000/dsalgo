@@ -34,6 +34,28 @@ vector<int> solve(vector<int> &a) {
 }
 
 
+// vector<int> solve(vector<int> &v) {
+//       int n = v.size();
+//       int left = 0, right = 0, leftMax = v[0], rightMin = v[n - 1];
+//
+//       for (int i = 0; i < n; i++) {
+//             if (v[i] < leftMax) right = i;
+//             else leftMax = max(leftMax, v[i]);}
+//
+//       for (int i = n - 1; i >= 0; i--) {
+//             if (v[i] > rightMin) left = i;
+//             else rightMin = min(rightMin, v[i]);}
+//
+//
+//       vector<int> reqArray;
+//       if (left == right) reqArray.push_back(-1);
+//       else {
+//             reqArray.push_back(left);
+//             reqArray.push_back(right);
+//       }
+//       return reqArray;
+// }
+
 
 // vector<int> solve(vector<int> &v){
 //
