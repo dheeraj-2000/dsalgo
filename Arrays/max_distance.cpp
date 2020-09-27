@@ -29,7 +29,7 @@ int solve(vector<int> &b){
             // cout<<A[i].first<<'\t'<<A[i].second<<endl;
       }
 
-      return n;
+      return max_;
 
 }
 
