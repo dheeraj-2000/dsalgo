@@ -3,6 +3,10 @@
 using namespace std;
 
 int solve(vector< vector <int>> &B, int n, int m) {
+
+      int left,
+
+
       // int x = B.size();
       // sort(B.begin(), B.end());
       cout<<B.size();
