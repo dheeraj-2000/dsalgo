@@ -10,7 +10,7 @@
 * Resolve conflicts ( if any ).
 * Wait for the pull request to be approved.
 
-*Feel free to contact, if you face any issue in Open Source Contribution* 
+**Feel free to contact, if you face any issue in Open Source Contribution** 
 
 <div align="center">
 
