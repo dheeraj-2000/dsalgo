@@ -2,7 +2,8 @@
 #include <iostream>
 using namespace std;
 
-// to find (a^b)%m (copied from fermat's)
+/* to find (a^b)%m (copied from fermat's)
+Runtime: O(log(b)) */
 int power(int a, unsigned b, unsigned m)
 {
     if (!b)
@@ -14,7 +15,9 @@ int power(int a, unsigned b, unsigned m)
     return (a * res) % m;
 }
 
-// finds gcd and modular inverse
+/* finds gcd and modular inverse of (a, b) using extended euclid's
+x is the running a^{-1} (mod b) and y is the running b^{-1} (mod a) 
+Runtime: O(log(max(a, b))) */
 int egcd(int a, int b, int* x, int* y)
 {
     if (!b) {
@@ -29,7 +32,7 @@ int egcd(int a, int b, int* x, int* y)
     return gcd_res;
 }
 
-// find modular inverse of a (mod m) if gcd(a,m) == 1
+// find modular inverse of a (mod m) if gcd(a,m) == 1 
 int modularInverse(int a, int m)
 {
     int inverse;
@@ -48,7 +51,8 @@ int modularInverse(int a, int m)
 }
 
 /* Find the encyrption and decryption of message where
-Public key = (N,e) and private key = d */
+Public key = (N,e) and private key = d 
+Encryption and decryption runtime: O(log(p*q)) (I think) */
 void rsa(int p, int q, int e, int message) {
     if (p <= 1 || q <= 1 || p == q) {
         cout << "p and q must be distinct positive primes";
