@@ -138,7 +138,7 @@ void reverse_list(node** head_ref)
     }
     *head_ref = prev;
 }
-
+/*
 void swap(node** head_ref, int x, int y)
 {
     node *prev1 = NULL, *prev2 = NULL, *curr1 = *head_ref, *curr2 = *head_ref;
@@ -168,7 +168,7 @@ void swap(node** head_ref, int x, int y)
     curr1->next = curr2->next;
     curr2->next = temp;
 }
-
+*/
 void print(node* head)
 {
     while(head != NULL)
@@ -195,7 +195,7 @@ int main()
     popPosition(&head, 6);
     print(head);
     reverse_list(&head);
-    swap(&head, 7, 11);
+    //swap(&head, 7, 11);
     print(head);
     return 0;
 }
