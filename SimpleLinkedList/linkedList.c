@@ -14,17 +14,21 @@ List* createList() {
     return L;
 }
 
-void add(List* l, int valor) {
+void add(List* l, int value) {
     // creating a new node pointer in memory to add to list
     Node* node = (Node*) malloc(sizeof(Node));
+
+    // previously and actual node
     Node *a, *p;
 
-    node->v = valor;
+    // is that first element of list? Yes, So make it header
+    node->v = value;
     if(l->begin == NULL)  {
         l->begin = node;
         node->Next = NULL;
     }
 
+    // No, so put it on the end of list
     else {
         p = l->begin;
         a = p;
@@ -37,6 +41,7 @@ void add(List* l, int valor) {
     }
 }
 
+// for every node, print his value
 void printList(List* l) {
     Node* p = l->begin;
     if(p != NULL) {
@@ -48,26 +53,31 @@ void printList(List* l) {
     }
 }
 
+// it is only necessary to check if the list header is null
 int isEmpty(List* l){
     return (l->begin == NULL);
 }
 
 void removeBack(List* l) {
+    // previously and actual node
     Node *p, *a; 
     p = l->begin;
     a = p;
     
-    //Se eu quiser remover o ultimo elemento
+    //There is only 1 node?
     if(p->Next == NULL) {
         l->begin = NULL;
         return;
     }
 
+    // go to the last node and mark the previous node as NULL
     while(p->Next != NULL) {
         a = p;
         p = p->Next;
     }
     a->Next = NULL;
+
+    // clean node from memory
     free(p);
 }
 
@@ -75,9 +85,10 @@ int size(List* l) {
     Node* p = l->begin;
     int length = 0;
     
-    //printf("%p\n", l->begin); 
-    if(l->begin == NULL) return 0;
+    // list is empty?
+    if(isEmpty(l)) return 0;
 
+    // count until reach the last node
     while(p != NULL) {
         p = p->Next;
         length++;
