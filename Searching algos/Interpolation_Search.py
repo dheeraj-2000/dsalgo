@@ -25,6 +25,8 @@ while(start<=end and Number>=list1[start] and Number<=list1[end]):
             
     # To find the mid element of the given array.
     random= start + int(((float(end-start)/(list1[end]-list1[start]))*(Number-list1[start])))
+    
+    #If the number is present in the list.
     if list1[random]==Number:
         print(f" The number {Number} is present on the index {random}")
         flag=1
@@ -32,5 +34,6 @@ while(start<=end and Number>=list1[start] and Number<=list1[end]):
         start= random+1
     else:
         end= random-1
+# If the number is not present in the given list.
 if(flag==0):
     print(f"The number {Number} is not present in the given list!")
