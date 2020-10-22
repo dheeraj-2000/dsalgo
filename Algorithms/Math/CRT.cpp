@@ -72,11 +72,6 @@ Input 1: number of modular equivalencies
 Input 2: integer equivalencies a1, a2, ..., am */
 int main()
 {   
-    // cout << "Public key = (N, e) where N = pq, p and q are distinct primes, and e is coprime with (p-1)(q-1). Input format: p q e message" << endl;
-    // int p, q, e, message;
-    // cin >> p >> q >> e >> message;
-    // rsa(p, q, e, message);
-
     cout << "Chinese Remainder Theorem: given a list of integer equivalencies {a1, a2, ..., am} "
             "and a list of coprime mod spaces {n1, n2, ..., nm}, "
             "finds an integer x (mod n1 * n2 * ... * nm) "
