@@ -140,3 +140,28 @@ int insertPosition(List* l, int value, int position) {
     }
     return -1;
 }
+
+int removePosition(List* l, int position) {
+    Node *p, *bef;
+    bef = p = l->begin;
+    int count = 0;
+
+    if(position >= 0 && l->begin != NULL) {
+        if(position == 0) {
+            l->begin = p->Next;
+        }
+        else {
+            while(p != NULL) {
+                if(count == position) {
+                     bef->Next = p->Next;
+                }         
+                bef = p;
+                p = p->Next;
+                count++;
+            }
+            free(p);
+            return 0;
+        }
+    }
+    return -1;
+}
