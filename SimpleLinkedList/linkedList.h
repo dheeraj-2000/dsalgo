@@ -35,3 +35,5 @@ int hasElement(List* l, int value);
 int insertPosition(List* l, int value, int position);
 
 int removePosition(List* l, int position);
+
+int getElement(List *l, int pos, int *value);

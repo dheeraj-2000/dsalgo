@@ -58,6 +58,10 @@ int main (void) {
     printList(list);
     removePosition(list, 1);
     printList(list);
+
+    int value;
+    getElement(list, 1, &value);
+    printf("Element at position 1: %d\n", value);
     return 0;
 }
 

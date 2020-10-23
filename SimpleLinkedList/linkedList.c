@@ -114,19 +114,29 @@ int insertPosition(List* l, int value, int position) {
     node->v = value;    
     p = bef = l->begin;
 
+    // Is a valid position?
     if(position >= 0) {
+
+        // Insert at first position?
         if(position == 0) {
+
+            // Has first element?
             if(l->begin == NULL) {
+                // Change the LIST HEADER pointer to the new element
                 l->begin = node;
                 node->Next = NULL; 
             }
             else {
+                // Pointer header to that
                 l->begin = node;
                 node->Next = p;
             }
         }
         else {
+            // Find the position until the end
             while(p != NULL) {
+
+                // Insert it between P and BEF
                 if(count == position) {
                     node->Next = p;
                     bef->Next = node;
@@ -146,12 +156,16 @@ int removePosition(List* l, int position) {
     bef = p = l->begin;
     int count = 0;
 
+    // Is a valid position?
     if(position >= 0 && l->begin != NULL) {
+        // First position? Then make the list header to null
         if(position == 0) {
             l->begin = p->Next;
         }
         else {
+            // Find the position
             while(p != NULL) {
+                // Remove the node changing pointers
                 if(count == position) {
                      bef->Next = p->Next;
                 }         
@@ -159,8 +173,36 @@ int removePosition(List* l, int position) {
                 p = p->Next;
                 count++;
             }
+            // Remove node from memory
             free(p);
             return 0;
+        }
+    }
+    return -1;
+}
+
+int getElement(List *l, int pos, int *value) {
+    Node *p;
+    p = l->begin;
+    int count = 0;
+    
+    // Is a valid position?
+    if(pos >= 0 && l->begin != NULL) {
+        // First position?
+        if(pos == 0) {
+            value = &(l->begin->v);
+        }
+        else {
+            // Go to the position
+            while(p != NULL) {
+                if(count == pos) {
+                    // Value = position node value
+                    value = &(p->v);
+                    return 0;            
+                }
+                p = p->Next;
+                count++;
+            }
         }
     }
     return -1;
