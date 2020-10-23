@@ -93,6 +93,16 @@ int size(List* l) {
         p = p->Next;
         length++;
     }
-    return length;
-    
+    return length; 
+}
+
+int hasElement(List* l, int value) {
+    int pos = 0;
+    Node *p = l->begin;
+    while(p != NULL) {
+        if(p->v == value) return pos;
+        pos++;
+        p = p->Next;
+    }
+    return -1;
 }

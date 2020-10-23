@@ -3,43 +3,50 @@
 #include "linkedList.h"
 
 int main (void) {
-    List *lista = createList();
+    List *list = createList();
     if(isEmpty) printf("Empty list\n");
 
-    add(lista, 10);
-    add(lista, 20);
-    add(lista, 30);
-    add(lista, 40);
-    add(lista, 50); 
-    printList(lista);
+    add(list, 10);
+    add(list, 20);
+    add(list, 30);
+    add(list, 40);
+    add(list, 50); 
+    printList(list);
 
-    removeBack(lista);
-    printList(lista);
-    printf("Lenght: %d\n\n", size(lista)); 
+    int testList[] = {10, 45, 56, 78};
 
-    removeBack(lista);
-    printList(lista);
-    printf("Length: %d\n\n", size(lista)); 
+    for(int item; item < 4; item++) {
+        if(hasElement(list, testList[item]))
+            printf("%d exists on list!\n", item);
+    }
 
-    add(lista, 60);
-    printf("Length: %d\n\n", size(lista)); 
-    printList(lista);
+    removeBack(list);
+    printList(list);
+    printf("Lenght: %d\n\n", size(list)); 
 
-    removeBack(lista);
-    printf("Length: %d\n\n", size(lista)); 
-    removeBack(lista);
+    removeBack(list);
+    printList(list);
+    printf("Length: %d\n\n", size(list)); 
 
-    printList(lista);
-    printf("Length: %d\n\n", size(lista)); 
-    removeBack(lista);
+    add(list, 60);
+    printf("Length: %d\n\n", size(list)); 
+    printList(list);
 
-    printList(lista);
-    printf("Length: %d\n\n", size(lista)); 
+    removeBack(list);
+    printf("Length: %d\n\n", size(list)); 
+    removeBack(list);
 
-    removeBack(lista);
-    printList(lista);
+    printList(list);
+    printf("Length: %d\n\n", size(list)); 
+    removeBack(list);
 
-    if(isEmpty(lista)) printf("Empty list\n");
-    printf("Length: %d\n\n", size(lista)); 
+    printList(list);
+    printf("Length: %d\n\n", size(list)); 
+
+    removeBack(list);
+    printList(list);
+
+    if(isEmpty(list)) printf("Empty list\n");
+    printf("Length: %d\n\n", size(list)); 
     return 0;
 }

@@ -29,3 +29,7 @@ void removeBack(List* l);
 // get the list size
 int size(List* l);
 
+// Check if an element exists
+int hasElement(List* l, int value);
+
+
