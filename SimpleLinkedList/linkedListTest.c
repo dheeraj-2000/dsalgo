@@ -13,11 +13,11 @@ int main (void) {
     add(list, 50); 
     printList(list);
 
-    int testList[] = {10, 45, 56, 78};
+    int testList[] = {10, 45, 56, 20};
 
-    for(int item; item < 4; item++) {
-        if(hasElement(list, testList[item]))
-            printf("%d exists on list!\n", item);
+    for(int item = 0; item < 4; item++) {
+        if(hasElement(list, testList[item]) != -1)
+            printf("%d exists on list!\n", testList[item]);
     }
 
     removeBack(list);
@@ -47,6 +47,16 @@ int main (void) {
     printList(list);
 
     if(isEmpty(list)) printf("Empty list\n");
-    printf("Length: %d\n\n", size(list)); 
+    printf("Length: %d\n\n", size(list));
+inser
+    // insert on specific position
+    add(list, 100);
+    add(list, 102);
+    add(list, 103);
+    printList(list);
+    insertPosition(list, 101, 1);
+    printList(list);
+
     return 0;
 }
+

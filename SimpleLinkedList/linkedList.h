@@ -32,4 +32,5 @@ int size(List* l);
 // Check if an element exists
 int hasElement(List* l, int value);
 
+int insertPosition(List* l, int value, int position);
 

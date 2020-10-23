@@ -106,3 +106,37 @@ int hasElement(List* l, int value) {
     }
     return -1;
 }
+
+int insertPosition(List* l, int value, int position) {
+    Node *node = (Node*) malloc(sizeof(Node));
+    Node *p, *bef;
+    int count = 0;
+    node->v = value;    
+    p = bef = l->begin;
+
+    if(position >= 0) {
+        if(position == 0) {
+            if(l->begin == NULL) {
+                l->begin = node;
+                node->Next = NULL; 
+            }
+            else {
+                l->begin = node;
+                node->Next = p;
+            }
+        }
+        else {
+            while(p != NULL) {
+                if(count == position) {
+                    node->Next = p;
+                    bef->Next = node;
+                    return 0;
+                }
+                bef = p;
+                p = p->Next;
+                count++;
+            }
+        }
+    }
+    return -1;
+}
