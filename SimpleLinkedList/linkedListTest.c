@@ -48,7 +48,7 @@ int main (void) {
 
     if(isEmpty(list)) printf("Empty list\n");
     printf("Length: %d\n\n", size(list));
-    
+
     // insert on specific position
     add(list, 100);
     add(list, 102);
@@ -56,7 +56,8 @@ int main (void) {
     printList(list);
     insertPosition(list, 101, 1);
     printList(list);
-
+    removePosition(list, 1);
+    printList(list);
     return 0;
 }
 
