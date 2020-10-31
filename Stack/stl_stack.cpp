@@ -1,3 +1,6 @@
+// Stacks are a type of container adaptors with LIFO(Last In First Out) type of working, 
+// where a new element is added at one end and (top) an element is removed from that end only
+
 #include <bits/stdc++.h> 
 using namespace std; 
   
