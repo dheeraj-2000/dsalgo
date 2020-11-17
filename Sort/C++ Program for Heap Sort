@@ -1,0 +1,58 @@
+// C++ program for implementation of Heap Sort
+
+#include<bits/stdc++.h>
+
+using namespace std;
+
+void heapify(int array[], int numOfElements, int current)
+{
+    int leftChild = 2 * current + 1;
+    int rightChild = 2 * current + 2;
+    int largest = current;
+    // If left child is larger than root
+    if(leftChild < numOfElements && array[leftChild] > array[current])
+        largest = leftChild;
+    // If right child is larger than root
+    if(rightChild < numOfElements && array[rightChild] > array[largest])
+        largest = rightChild;
+    // If largest element is not current
+    if(largest != current)
+    {
+        swap(array[largest], array[current]);
+        // Recursively heapify the subtree
+        heapify(array, numOfElements, largest);
+    }
+}
+
+// Function for heap sort
+void heapSort(int *array, int numOfElements)
+{
+    // Create a max heap
+    for(int i = numOfElements/2 - 1; i >= 0; i--)
+        heapify(array, numOfElements, i);
+
+    for(int i = numOfElements-1; i > 0; i--)
+    {
+        // swap first and last
+        swap(array[0], array[i]);
+        // Create a max heap 
+        heapify(array, i, 0);    
+    }
+}
+
+//Function printing the array
+void printArray(int array[], int numOfElements)
+{
+    for (int i = 0; i < numOfElements; ++i)
+        cout << array[i] << " ";
+    cout << "\n";
+}
+
+int main()
+{
+    int array[] = { 12, 11, 13, 5, 6, 1, 7 };
+    int numOfElements = sizeof(array) / sizeof(array[0]);
+    heapSort(array, numOfElements);
+    printArray(array, numOfElements);
+    return 0;
+}
