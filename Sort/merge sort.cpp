@@ -20,13 +20,10 @@ void merge( int a[], int start, int end){
     //Compare and fill temp
      while( i<= mid && j<= end ){
 
-        if(a[i]<a[j]){
+        if(a[i]<a[j])
             temp[k++]=a[i++];
-        }
-        
-        else{
+        else
             temp[k++]=a[j++];
-        }
     }
 
     //Fill remaining elements in temp
@@ -38,10 +35,8 @@ void merge( int a[], int start, int end){
     }
 
     //Copy elements of temp in a
-    for(int i= start; i<= end; i++){
+    for(int i= start; i<= end; i++)
         a[i]= temp[i];
-    }
-
     return; 
 } 
 
