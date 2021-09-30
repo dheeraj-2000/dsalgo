@@ -36,8 +36,7 @@
 
 typedef   long long int               ll ;
 
-//freopen("input.txt","r",stdin);
-//freopen("output.txt","w",stdout);
+
 
 using namespace std;
 

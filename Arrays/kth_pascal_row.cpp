@@ -9,9 +9,9 @@ vector<int> solve(int A) {
           ans.push_back(c);
           c = c*(i - j)/j;
       }
-      return ans;
+      // return ans;
 
-      // for (int i=0; i<A; i++)
+      // for (int i=0; i<ans.size(); i++)
       //       cout<<ans[i];
 }
 //
