@@ -79,7 +79,8 @@ int main(){
         cin>>nums[i];
     }
 
-    int ans=largestConsecutive(nums);
+    int ans=longestConsecutive(nums);
+    cout<<ans<<endl;
     return 0;
 
 }
