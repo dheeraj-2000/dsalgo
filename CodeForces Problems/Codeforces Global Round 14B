@@ -1,0 +1,57 @@
+/* Author: Ajeet Kumar Jaiswal */
+#include<bits/stdc++.h>
+#include <ext/pb_ds/assoc_container.hpp>
+#include <ext/pb_ds/tree_policy.hpp>
+using namespace __gnu_pbds;
+using namespace std;
+
+#define fast_io         ios_base::sync_with_stdio(false);cin.tie(NULL)
+
+typedef long long          ll;
+typedef unsigned long long ull;
+typedef long double        lld;
+
+void init_code(){ 
+   fast_io;  
+   #ifndef ONLINE_JUDGE 
+   freopen("input.txt", "r", stdin); freopen("output.txt", "w", stdout);freopen("error.txt","w",stderr);
+   #endif 
+}
+bool is_sqrt(ll n,ll m){
+   ll a=sqrt(n/m);
+   if(m*a*a==n)
+      return true;
+   return false;
+}
+
+void solve(){
+   ll n;
+   cin>>n;
+   if(n%2){
+      cout<<"NO";
+   }
+   else{
+      if(is_sqrt(n,2) || is_sqrt(n,4)){ // This is pattern which you will find in the given test case when n=2 and n=4 from this only we have to construct further.
+         cout<<"YES";
+      }
+      else{
+         cout<<"NO";
+      }
+   }
+   return ; 
+}
+
+
+ 
+int32_t main(){  
+   init_code();
+   ll t=1; cin >> t;
+   while(t--){
+      solve();
+      cout<<"\n";
+   }
+   return 0;
+}
+
+
+
