@@ -1,4 +1,6 @@
+
 //Euler’s Totient function F(n) for an input n is the count of numbers in {1, 2, 3, …, n} that are relatively prime to n, i.e., the numbers whose GCD (Greatest Common Divisor) with n is 1.
+
 //For example, F(4) = 2, F(3) = 2 and F(5) = 4. There are 2 numbers smaller or equal to 4 that are relatively prime to 4, 2 numbers smaller or equal to 3 that are relatively prime to 3. And 4 numbers smaller than or equal to 5 that are relatively prime to 5.
 #include <stdio.h>
 
@@ -29,3 +31,4 @@ int main()
 		printf("phi(%d) = %d\n", n,  phi(n));
 	return 0;
 }
+
