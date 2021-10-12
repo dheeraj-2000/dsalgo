@@ -58,6 +58,8 @@ Solution:
  * }
  */
 
+//using reverse inorder traversal (Right -> Root -> Left)
+
 class Solution {
     int sum = 0;
     public TreeNode convertBST(TreeNode root) {
