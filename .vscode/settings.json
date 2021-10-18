@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "vector": "cpp"
+        "vector": "cpp",
+        "c_inverse_of_permutation": "cpp"
     }
 }
