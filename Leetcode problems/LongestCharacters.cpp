@@ -1,3 +1,6 @@
+/* Given a string s, find the length of the longest substring without repeating characters. */
+// Link : https://leetcode.com/problems/longest-substring-without-repeating-characters/
+
 int lengthOfLongestSubstring(string s) {
     vector<int>mpp(256,-1);
     int left=0,right=0;
