@@ -15,7 +15,7 @@ bool isprime(long long n)
 
 bool isperfect(long long n) // perfect numbers
 {
-	// check is n is perfect sum of divisors
+	// check if n is a perfect sum of divisors
 	// except the number itself = number
 	long long s = -n;
 	for (long long i = 1; i * i <= n; i++) {
