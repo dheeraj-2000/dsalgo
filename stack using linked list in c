@@ -1,0 +1,147 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+typedef struct Polynomial{
+int coef;
+int exp;
+struct Polynomial* link;
+}Polynomial;
+Polynomial* poly1,*poly2;
+Polynomial* insertAtBeginning(Polynomial* list,int co,int ex){
+Polynomial* temp;
+temp=malloc(sizeof(Polynomial));
+temp->coef=co;
+temp->exp=ex;
+temp->link=list->link;
+list->link=temp;
+return list;
+}
+void display(Polynomial* list){
+while(list->link!=NULL){
+list=list->link;
+printf("%dx^%d",list->coef,list->exp);
+if(list->link!=NULL)
+printf("+");
+}
+}
+Polynomial* sum(Polynomial*a,Polynomial*b){
+Polynomial *sum=malloc(sizeof(Polynomial));
+Polynomial*ptr1=a->link,*ptr2=b->link,*s=sum,*new;
+while(ptr1!=NULL && ptr2!=NULL){
+new=malloc(sizeof(Polynomial));
+if(ptr1->exp>ptr2->exp){
+new->exp=ptr1->exp;
+new->coef=ptr1->coef;
+s->link=new;
+ptr1=ptr1->link;
+}
+else if(ptr1->exp<ptr2->exp){
+new->exp=ptr2->exp;
+new->coef=ptr2->coef;
+
+s->link=new;
+ptr2=ptr2->link;
+}
+else{
+new->coef=ptr1->coef+ptr2->coef;
+new->exp=ptr1->exp;
+s->link=new;
+ptr1=ptr1->link;
+ptr2=ptr2->link;
+}
+s=new;
+s->link=NULL;
+}
+while(ptr1!=NULL || ptr2!=NULL){
+new=malloc(sizeof(Polynomial));
+if(ptr1!=NULL){
+new->exp=ptr1->exp;
+new->coef=ptr1->coef;
+ptr1=ptr1->link;
+}
+else if(ptr2!=NULL){
+new->exp=ptr2->exp;
+new->coef=ptr2->coef;
+ptr2=ptr2->link;
+}
+s->link=new;
+s=new;
+}
+return sum;
+}
+Polynomial* product(Polynomial*a,Polynomial*b){
+Polynomial *pro=malloc(sizeof(Polynomial));
+Polynomial*ptr1=a->link,*ptr2=b->link,*p=pro,*new;
+while(ptr1!=NULL){
+while(ptr2!=NULL){
+new=malloc(sizeof(Polynomial));
+new->coef=ptr1->coef * ptr2->coef;
+new->exp=ptr1->exp+ptr2->exp;
+p->link=new;
+p=new;
+ptr2=ptr2->link;
+}
+ptr1=ptr1->link;
+ptr2=b->link;
+}
+ptr1=pro->link;
+while(ptr1!=NULL){
+
+ptr2=ptr1;
+while(ptr2->link!=NULL){
+if(ptr1->exp==ptr2->link->exp){
+p=ptr2->link;
+ptr1->coef+=ptr2->link->coef;
+ptr2->link=p->link;
+free(p);
+}
+ptr2=ptr2->link;
+}
+ptr1=ptr1->link;
+}
+return pro;
+}
+int main() {
+/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+poly1 =(Polynomial*)malloc(sizeof(Polynomial));
+poly2 =(Polynomial*)malloc(sizeof(Polynomial));
+Polynomial*new;
+int n,m,i,co;
+scanf("%d",&n);
+Polynomial*ptr1=poly1->link;
+for(i=0;i<n;i++){
+scanf("%d",&co);
+insertAtBeginning(poly1,co,i);
+}
+scanf("%d",&m);
+Polynomial*ptr2=poly2;
+for(i=0;i<m;i++){
+scanf("%d",&co);
+insertAtBeginning(poly2,co,i);
+}
+int opt;
+scanf("%d",&opt);
+switch(opt)
+{
+case 1: printf("(");
+display(poly1);
+printf(")*(");
+display(poly2);
+printf(") = ");
+display(product(poly1,poly2));
+break;
+case 2:printf("(");
+display(poly1);
+printf(")+(");
+display(poly2);
+printf(") = ");
+
+display(sum(poly1,poly2));
+break;
+}
+return 0;
+}
