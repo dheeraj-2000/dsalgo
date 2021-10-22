@@ -1,0 +1,216 @@
+#include <math.h>
+#include <stdio.h>
+#include <string.h>
+#include <stdlib.h>
+#include <assert.h>
+#include <limits.h>
+#include <stdbool.h>
+typedef struct node{
+int val;
+struct node *next;
+}node;
+
+void display(node* list){
+//Print space separated integers from the linked list
+//list is the pointer pointing to the beginning of the linked list
+if(list==NULL){
+printf("Empty");
+}
+node *ptr =list;
+while (ptr!=NULL) {
+printf("%d ",ptr->val);
+ptr=ptr->next;
+}
+printf("\n");
+}
+
+node* insertAtBeginning(node* list,int val){
+//Write function to insert val at the beginning of the list and return a pointer pointi
+ng to beginning of the list
+node *ptr=(struct node *)malloc(sizeof(node));
+
+ptr->val=val;
+ptr->next=NULL;
+if(list==NULL)
+{
+list=ptr;
+return list;
+}
+else{
+ptr->next=list ;
+list=ptr;
+return list;}
+
+}
+node* insertAtEnd(node* list,int val){
+//Write function to insert val at the end of the list and return a pointer pointing to b
+eginning of the list
+node *ptr =list;
+node *temp=( struct node *)malloc(sizeof(node)); ;
+temp->val=val;
+temp->next=NULL;
+if(ptr==NULL)
+{
+list=temp;
+return list;
+}
+else {
+
+while (ptr->next!=NULL) {
+ptr=ptr->next;
+}
+ptr->next=temp;
+return list;
+}
+}
+node* insertAtPosition(node* list,int val,int pos){
+//Write function to insert "val" at "pos" in the list and return a pointer pointing to b
+eginning of the list
+
+node *ptr,*temp;
+ptr=list;
+temp =( struct node *)malloc(sizeof(struct node));
+temp->val=val;
+temp->next=NULL;
+int i=0;
+if(list==NULL){
+return list;
+}
+
+else{
+if(pos==0
+){
+
+temp->next=ptr;
+ptr=temp;
+return ptr;
+}
+else{while(i<pos-2){
+ptr=ptr->next;
+i++;
+}
+temp->next=ptr->next;
+ptr->next=temp;
+return list;
+}
+}
+}
+node* deleteFromBeginning(node* list,int* flag){
+//Delete from the beginning of the list and return pointer pointing to the beginning
+of the list
+//If deletion not possible set flag as -1 and return pointer to beginning of list
+node *ptr =list;
+if(ptr==NULL){
+*flag= -1;
+return list;
+}
+else
+{
+ptr=list->next;
+free(list);
+list=NULL;
+return ptr;
+}
+
+}
+node* deleteFromEnd(node* list,int* flag){
+//Delete from the end of the list and return pointer to the beginning of the list
+//If deletion not possible set flag as -1 and return pointer to beginning of list
+if(list==NULL){
+*flag= -1;
+return list;
+}
+else {
+node *temp1,*temp2;
+temp1=list;
+
+temp2=list;
+while (temp1->next!=NULL) {
+temp2=temp1;
+temp1=temp1->next;}
+if(temp1 == list)
+{
+list = NULL;
+
+}
+else{
+temp2->next=NULL;}
+free(temp1);
+temp1=NULL;
+return list;
+}
+}
+node* deleteFromPosition(node* list,int pos,int* flag){
+//Delete from the "pos" of the list and return pointer to the beginning of the list
+//If deletion not possible set flag as -1 and return pointer to beginning of list
+node *prev =list;
+node *ptr1=list;
+node *ptr =list;
+int i=0;
+if(list == NULL)
+{
+*flag= -1;
+return list;
+}
+if(pos==1){
+ptr=list->next;
+free(list);
+list=NULL;
+return ptr;
+}
+while(i<=pos-2){
+prev = prev->next;
+i++;
+if(prev == NULL)
+{
+*flag= -1;
+
+return list;
+}
+}
+ptr1=prev->next;
+prev ->next=ptr1->next;
+free(ptr1);
+ptr1=NULL;
+return list;
+}
+
+int main() {
+/* Enter your code here. Read input from STDIN. Print output to STDOUT */
+node* first = NULL;
+int opt,pos,val;
+scanf("%d",&opt);
+while(opt != 8){
+int flag = 0;
+switch(opt){
+case 1: display(first);
+break;
+case 2: scanf("%d",&val);
+first = insertAtBeginning(first,val);
+break;
+case 3: scanf("%d",&val);
+first = insertAtEnd(first,val);
+break;
+case 4: scanf("%d %d",&val,&pos);
+first = insertAtPosition(first,val,pos);
+break;
+case 5: first = deleteFromBeginning(first,&flag);
+if(flag == -1)
+printf("Deletion not possible\n");
+break;
+case 6: first = deleteFromEnd(first,&flag);
+if(flag == -1)
+printf("Deletion not possible\n");
+break;
+case 7: scanf("%d",&pos);
+first = deleteFromPosition(first,pos,&flag);
+if(flag == -1)
+printf("Deletion not possible\n");
+break;
+}
+
+scanf("%d",&opt);
+}
+
+return 0;
+}
