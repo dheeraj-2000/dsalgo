@@ -3,7 +3,7 @@
  * When a solution is found, I will create another file with the problem name and number and then clean out this file.
  *
  * Evan C.
- * October 24, 2021
+ * October 26, 2021
  * Current Leetcode Problem: 414. Third Maximum Number
  */
 
@@ -29,7 +29,7 @@ public class ThirdMaxNumber {
 
 
         }
-        if(third == null) third = first;
+        if(third == null) third = first; // Needed in case the nums array is less than 3.
         return third;
     }
 
