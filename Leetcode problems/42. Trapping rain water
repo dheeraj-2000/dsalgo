@@ -1,0 +1,31 @@
+#trap rain water solution
+#runtime 4ms
+#linear time complexity
+#linear space complexity
+#simple solution
+class Solution {
+public:
+    int trap(vector<int>& height)
+    {
+        int n=height.size();
+        
+        if(n==0)return 0;
+        
+        int hl[n],hr[n];
+        
+        hl[0]=height[0],hr[n-1]=height[n-1];
+        
+        for(int i=1;i<n;i++)hl[i]=max(hl[i-1],height[i]);
+        
+        for(int i=n-2;i>=0;i--)hr[i]=max(hr[i+1],height[i]);
+        
+        int hm[n],sum=0;
+        
+        for(int i=0;i<n;i++)
+        {
+        hm[i]=min(hl[i],hr[i])-height[i];
+        sum+=hm[i];
+        }
+        return sum;
+    }  
+};
