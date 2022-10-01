@@ -1,4 +1,5 @@
 #include <iostream>
+#include <cstdlib>
 using namespace std;
 
 int main()
@@ -18,7 +19,7 @@ int main()
         {
             x = p / a;
             y = q / b;
-            if (y - x == 1 || x - y == 1 || y - x == 0)
+            if (abs(y - x) == 1|| y - x == 0)
             {
                 cout << "YES" << endl;
             }
