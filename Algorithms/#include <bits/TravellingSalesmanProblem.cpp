@@ -29,8 +29,7 @@ int travllingSalesmanProblem(int graph[][V], int s)
 	return min_path;
 }
 
-int main()
-{
+int main(){
 	int graph[][V] = { { 0, 10, 15, 20 },
 					{ 10, 0, 35, 25 },
 					{ 15, 35, 0, 30 },
