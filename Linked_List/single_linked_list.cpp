@@ -1,6 +1,9 @@
 include<iostream.h>
-#include<conio.h>
-#include<stdlib.h>
+#include<conio>
+#include<stdlib>
+#include<cmath>
+
+using namespace std;
 
 
 class list
