@@ -2,7 +2,7 @@
 using namespace std;
 #define V 4
 
-int travllingSalesmanProblem(int graph[][V], int s)
+int travellingSalesmanProblem(int graph[][V], int s)
 {
 	vector<int> vertex;
 	for (int i = 0; i < V; i++)
