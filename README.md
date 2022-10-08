@@ -19,7 +19,7 @@
 -   Use proper names for your files.
 -   **Do all your changes in your forked repository branch and not in master branch untill asked.**
 -   **I will reject any pull request which looks like spammy or just to have +1 in the counter, so contribute quality code here!**
--   As per guidlines of Hacktoberfest, I will not merge any **plagrised** code or any type of **fishy** code.
+-   As per guidlines of Hacktoberfest, I will not merge any **plagiarized** code or any type of **fishy** code.
 
 **Feel free to contact, if you face any issue in contributing to Open Source** 
 
