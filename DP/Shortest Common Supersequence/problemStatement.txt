@@ -1,9 +1,0 @@
-Given two strings X and Y, find the length of the shortest sequence that includes both X and Y as its subsequence.
-
-For eg:
-
-Input: X= "AGGTAB" Y="GXTXAYB"
-Output: 9
-Explaination: The shortest such sequence is "AGXGTXAYB".
-
-Constraints: 1<=|X|,|Y|<=100
