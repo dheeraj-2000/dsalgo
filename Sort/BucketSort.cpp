@@ -1,46 +1,63 @@
-/* Author - Rahul Pathak */
-/*  Bucket sort assumes that the input is drawn from a uniform distribution and has an
-average-case running time of O(n).
-*/
+/*We use bucket sort if the input values are 
+distributed uniformly over a given range. 
+Mostly, the bucket sort is used to sort floating-point 
+numbers in the range [0,1].*/
 
-/* Bucket sort divides the interval [0,1) into n equal-sized subintervals, or buckets,
-    and then distributes the n input numbers into the buckets. Since the inputs are uniformly
-    and independently distributed over [0,1), we do not expect many numbers
-    to fall into each bucket. To produce the output, we simply sort the numbers in each
-    bucket and then go through the buckets in order, listing the elements in each. */
+#include <algorithm>
 #include <iostream>
 #include <vector>
-#include <algorithm>
 using namespace std;
 
-void bucketSort(vector<float> &A)
+void bucketSort(float arr[], int n)
 {
-    vector<float> buckets[A.size()];
-    // Putting each element into appropriate bucket
-    for (int i = 0; i < A.size(); i++)
-    {
-        int bucketIndex = A[i] * A.size();
-        buckets[bucketIndex].push_back(A[i]);
+    vector<float> b[n];
+ 
+    for (int i = 0; i < n; i++) {
+        int bi = n * arr[i]; 
+        b[bi].push_back(arr[i]);
     }
-    // Sorting elements in each bucket
-    for (int i = 0; i < A.size(); i++)
-        sort(buckets[i].begin(), buckets[i].end());
-    int i = 0;
-    // Concatenating all the sorted buckets
-    for (int j = 0; j < A.size(); j++)
-        for (int b = 0; b < buckets[j].size(); b++)
-        {
-            A[i] = buckets[j][b];
-            i++;
-        }
+ 
+    for (int i = 0; i < n; i++)
+        sort(b[i].begin(), b[i].end());
+ 
+    int index = 0;
+    for (int i = 0; i < n; i++)
+        for (int j = 0; j < b[i].size(); j++)
+            arr[index++] = b[i][j];
 }
-
+ 
 int main()
 {
-    vector<float> A = {0.23, 0.2, 0.43, 0.32, 0.128, 0.513, 0.135, 0.16, 0.17, 0.1};
-    bucketSort(A);
-    for (int i = 0; i < A.size(); i++)
-        cout << A[i] << ' ';
-    cout << endl;
-    return 0;
+    cout << "Enter the total number of elements in the array \n";
+    int n; 
+    cin >>n ;
+    cout << "Enter the elements of the array \n";
+    float arr[];
+    
+     for(int i=0;i<n;i++){
+        cin>>arr[i];
+    }
+    bucketSort(arr, n);
+ 
+    cout << "Sorted array is \n";
+    for (int i = 0; i < n; i++)
+        cout << arr[i] << " ";
+
 }
+
+/*
+Input :
+
+Enter the number of elements in the array 
+5  
+Enter the elements of the array 
+12 34 54 2 3
+
+Output :
+
+Array before sorting: 
+12 34 54 2 3 
+Array after sorting: 
+2 3 12 34 54 
+
+*/
