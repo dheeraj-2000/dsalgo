@@ -1,0 +1,72 @@
+#include <stdio.h>
+void printarray(int *A,int n);
+void quicksort (int *A,int,int);
+int partition (int  *A ,int,int);
+int main()
+{
+    int n,A[50],i;
+    printf("enter the number of elements in the array=\n");
+    scanf("%d",&n);
+    printf("input the elements in the array=\n");
+    for(i=0;i<n;i++)
+    {
+        scanf("%d",&A[i]);
+    }
+    quicksort(A,0,n-1);
+    printarray(A,n);
+    
+}
+void quicksort(int*A,int low,int high)
+{
+    int partitionindex;        //index of pivot after partition
+    if(low < high)
+    {
+        partitionindex = partition(A,low,high);
+        quicksort(A,low,partitionindex-1);         //sort left subarray
+        quicksort(A, partitionindex+1,high);       // sort right subarray
+    }
+}
+void printarray(int*A,int n)
+{
+    printf("The sorted array after applying the quick sort algorithm is=\n");
+    for(int i=0;i<n;i++)
+    {
+        printf(" %d ",A[i]);
+    }
+}
+int partition(int*A,int low,int high)
+{
+    int pivot=A[low];
+    int i=low+1;
+    int j=high;
+    int temp;
+    do
+    {
+        while(A[i]<=pivot)
+        {
+            i++;
+        }
+        while(A[j]>pivot)
+        {
+            j--;
+        }
+        if(i<j)
+        {
+            temp=A[i];
+            A[i]=A[j];
+            A[j]=temp;
+        }
+
+    }while(i<j);
+    temp=A[low];
+    A[low]=A[j];
+    A[j]=temp;
+    return j;
+}
+    
+    
+
+    
+
+
+
