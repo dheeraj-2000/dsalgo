@@ -1,0 +1,28 @@
+/*Eulcid's algorithm to find the GCD and LCM of two integers*/
+
+#include<stdio.h>
+int gcd_rec(int,int);
+void main(){
+
+
+   int firstno,secondno,gcd;
+   printf("Enter the two no.s to find GCD and LCM:");
+   scanf("%d%d",&firstno,&secondno);
+   
+   
+   if(firstno*secondno!=0){
+      gcd=gcd_rec(firstno,secondno);
+      printf("\nThe GCD of %d and %d is %d\n",firstno,secondno,gcd);
+      printf("\nThe LCM of %d and %d is %d\n",firstno,secondno,(firstno*secondno)/gcd);
+   }
+   else
+      printf("One of the number is 0");
+   }
+   
+   
+   /*Function for Euclid's Algorithm*/
+   int gcd_rec(int x, int y){
+   if (y == 0)
+      return x;
+   return gcd_rec(y, x % y);
+}
