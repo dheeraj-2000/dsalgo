@@ -33,6 +33,11 @@
 
 </div>
 
+## Thanks to all Contributors <a name = "contributors"></a>
+
+<a href="https://github.com/dheeraj-2000/dsalgo/graphs/contributors"> 
+<img src="https://contrib.rocks/image?repo=dheeraj-2000/dsalgo" /> 
+</a>
 ***
 <h1 align="center">Made with ❤️ by DHEERAJ </h1>
 	
