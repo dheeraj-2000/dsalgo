@@ -1,0 +1,45 @@
+public class ConcatenationOfArray
+{
+
+    //Body " Concatenation of Array"
+    public static void main(String[] args)
+    {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Enter the no. of elements of the array");
+        int o = in.nextInt();
+        int n = o*2;
+        int[] old = new int[o];
+        int[] ne = new int[n];
+
+
+        System.out.println("Enter the elements of the array");
+        //For loop for the given array
+        for(int i = 0; i < o ; i += 1)
+        {
+            old[i] = in.nextInt();
+            ne[i] = old[i];
+        }
+
+        //For concatenating rest of the array
+        for(int i = 0; i < o ; i += 1)
+        {
+            int a = i+o;
+            ne[a] = old[i];
+        }
+
+        System.out.println("The given array is ");
+        for(int i = 0; i < o ; i += 1)
+        {
+            System.out.print(old[i] + "  ");
+        }
+
+        System.out.println(" ");
+        System.out.println(" ");
+
+        System.out.println("Array created from concatenation is ");
+        for(int i = 0; i < n; i += 1)
+        {
+            System.out.print(ne[i] + "  ");
+        }
+    }
+}
