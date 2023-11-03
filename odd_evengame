@@ -1,0 +1,91 @@
+  #include <math.h>
+ # include <stdio.h>
+ # include <string.h>
+ # include <stdlib.h>
+ # include <assert.h>
+ # include <limits.h>
+ # include <stdbool.h>
+
+ typedef struct node {
+ int value ;
+ struct node * next ;
+ } node ;
+
+ int main () {
+ /* Enter your code here . Read input from STDIN . Print output to STDOUT */
+ int no , i ;
+ scanf ("%d" ,& no ) ;
+ node * ptr ,* n ,* head1 ;
+ n =( node *) malloc ( sizeof ( node ) ) ;
+ scanf ("%d" ,&n -> value ) ;
+ n -> next = NULL ;
+ ptr = n ;
+ head1 = n ;
+ for ( i =1; i < no ; i ++)
+ {
+ n =( node *) malloc ( sizeof ( node ) ) ;
+ scanf ("%d" ,&n -> value ) ;
+ n -> next = NULL ;
+ ptr -> next = n ;
+ ptr = n ;
+ }
+ int c =1;
+ ptr = head1 ;
+ n =( node *) malloc ( sizeof ( node ) ) ;
+ n -> value = ptr -> value ;
+ n -> next = NULL ;
+ if( ptr -> next != NULL )
+ ptr = ptr -> next -> next ;
+ else {
+ ptr = ptr -> next ;
+ }
+ node * head2 =n ,* ptr2 ;
+ ptr2 = n ;
+
+ while ( ptr != NULL )
+ {
+ c ++;
+ if( c %2==1)
+ {
+
+ n =( node *) malloc ( sizeof ( node ) ) ;
+ n -> value = ptr -> value ;
+ n -> next = NULL ;
+ ptr2 -> next = n ;
+ ptr2 = n ;
+ if( ptr -> next != NULL )
+ ptr = ptr -> next -> next ;
+ else {
+ ptr = ptr -> next ;
+ }
+ }
+ }
+ c =1;
+ ptr = head1 -> next ;
+
+ while ( ptr != NULL )
+ {
+ c ++;
+ if( c %2==0)
+ {
+ n =( node *) malloc ( sizeof ( node ) ) ;
+ n -> value = ptr -> value ;
+ n -> next = NULL ;
+ ptr2 -> next = n ;
+ ptr2 = n ;
+ if( ptr -> next != NULL )
+ ptr = ptr -> next -> next ;
+ else {
+ ptr = ptr -> next ;
+ }
+ }
+ }
+
+ ptr = head2 ;
+ while ( ptr != NULL )
+ {
+ printf ("%d ",ptr -> value ) ;
+ ptr = ptr -> next ;
+ }
+ return 0;
+}
